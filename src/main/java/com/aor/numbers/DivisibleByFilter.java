@@ -1,6 +1,6 @@
 package com.aor.numbers;
 
-public class DivisibleByFilter {
+public class DivisibleByFilter implements GenericListFilter{
     int constante;
 
     public DivisibleByFilter(int constante){
@@ -8,6 +8,7 @@ public class DivisibleByFilter {
     }
 
     public boolean accept(Integer number){
+        if(constante==0) return false;
         if (number%constante==0) return true;
         return false;
     }
