@@ -33,8 +33,7 @@ public class ListFilterTest {
     @Test
     public void filtererTestTrue() {
         List<Integer> expected = list;
-        PositiveFilter truefilter = new PositiveFilter();
-        PositiveFilter stub = Mockito.mock(PositiveFilter.class);
+        GenericListFilter stub = Mockito.mock(GenericListFilter.class);
         Mockito.when(stub.accept(Mockito.anyInt())).thenReturn(true);
 
         ListFilterer new_filterer = new ListFilterer(stub);
@@ -45,8 +44,7 @@ public class ListFilterTest {
     public void filtererTestFalse() {
         List<Integer> expected = new ArrayList<>();
 
-        PositiveFilter truefilter = new PositiveFilter();
-        PositiveFilter stub = Mockito.mock(PositiveFilter.class);
+        GenericListFilter stub = Mockito.mock(GenericListFilter.class);
         Mockito.when(stub.accept(Mockito.anyInt())).thenReturn(false);
 
         ListFilterer new_filterer = new ListFilterer(stub);
